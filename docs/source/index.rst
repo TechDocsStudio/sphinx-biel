@@ -40,10 +40,6 @@ Please review `CONTRIBUTING <https://sphinx-pushfeedback.readthedocs.io/en/lates
 
 **THANK YOU TO THE CONTRIBUTORS OF sphinx-pushfeedback!**
 
-.. contributors:: dgarcia360/sphinx-pushfeedback
-   :avatars:
-   :exclude: dependabot[bot]
-
 License
 -------
 

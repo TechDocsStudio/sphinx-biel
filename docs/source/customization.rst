@@ -13,11 +13,3 @@ For example, the following CSS snippet makes the images round:
   .sphinx-pushfeedback img {
       border-radius: 50%;
   }
-
-.. rst-class:: custom-contributors
-
-.. contributors:: sphinx-doc/sphinx
-    :avatars:
-    :exclude: dgarcia360,sphinx
-    :limit: 5
-    :order: DESC
