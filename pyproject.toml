@@ -3,10 +3,10 @@ requires = ["flit_core >=2,<4"]
 build-backend = "flit_core.buildapi"
 
 [tool.flit.metadata]
-module = "sphinx_contributors"
+module = "sphinx_pushfeedback"
 author = "David Garcia"
 author-email = "hi@davidgarcia.dev"
-home-page = "https://github.com/dgarcia360/sphinx-contributors"
+home-page = "https://github.com/dgarcia360/sphinx-pushfeedback"
 description-file = "README.rst"
 requires-python = ">=3.7"
 requires = ["sphinx >= 3"]

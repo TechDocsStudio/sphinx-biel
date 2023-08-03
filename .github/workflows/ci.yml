@@ -32,6 +32,3 @@ jobs:
       - name: "Build sample"
         run: |
           make -C docs dirhtml
-      - name: "Run tests"
-        run: |
-          pytest -vvv

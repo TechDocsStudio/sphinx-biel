@@ -8,8 +8,8 @@ from datetime import date
 
 # -- Project information -----------------------------------------------------
 
-docstitle = "sphinx-contributors"
-project = "sphinx-contributors"
+docstitle = "sphinx-pushfeedback"
+project = "sphinx-pushfeedback"
 copyright = str(date.today().year) + ", David Garcia. All rights reserved."
 author = "David Garcia"
 
@@ -19,7 +19,7 @@ author = "David Garcia"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["sphinx_contributors"]
+extensions = ["sphinx_pushfeedback"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]

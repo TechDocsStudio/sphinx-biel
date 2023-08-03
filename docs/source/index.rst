@@ -1,7 +1,7 @@
 Overview
 ========
 
-``sphinx-contributors`` is a Sphinx extension that helps you recognize the people who have contributed to an open-source project.
+``sphinx-pushfeedback`` is a Sphinx extension that helps you recognize the people who have contributed to an open-source project.
 
 Features
 ---------
@@ -17,7 +17,7 @@ Choose how many contributors show and sort them by the number of commits.
 Supported platforms
 ---------------------
 
-``sphinx-contributors`` only works with GitHub public repositories.
+``sphinx-pushfeedback`` only works with GitHub public repositories.
 
 Get started
 -----------
@@ -36,11 +36,11 @@ Contributing
 ------------
 
 We encourage public contributions!
-Please review `CONTRIBUTING <https://sphinx-contributors.readthedocs.io/en/latest/contribute.html>`_ for details on our code of conduct and development process.
+Please review `CONTRIBUTING <https://sphinx-pushfeedback.readthedocs.io/en/latest/contribute.html>`_ for details on our code of conduct and development process.
 
-**THANK YOU TO THE CONTRIBUTORS OF SPHINX-CONTRIBUTORS!**
+**THANK YOU TO THE CONTRIBUTORS OF sphinx-pushfeedback!**
 
-.. contributors:: dgarcia360/sphinx-contributors
+.. contributors:: dgarcia360/sphinx-pushfeedback
    :avatars:
    :exclude: dependabot[bot]
 
@@ -49,4 +49,4 @@ License
 
 Copyright (c) 2018 - present David Garcia (`@dgarcia360 <https://twitter.com/dgarcia360>`_).
 
-Licensed under the `MIT License <https://github.com/dgarcia360/sphinx-contributors/blob/main/LICENSE.md>`_.
+Licensed under the `MIT License <https://github.com/dgarcia360/sphinx-pushfeedback/blob/main/LICENSE.md>`_.
