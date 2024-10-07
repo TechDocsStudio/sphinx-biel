@@ -1,7 +1,7 @@
 """
-Feedback widget for Sphinx.
+ASK AI chatbot for Sphinx.
 
-(c) 2023 - present PushFeedback.com
+(c) 2024 - present Biel.ai
 This code is licensed under MIT license (see LICENSE.md for details).
 """
 
@@ -9,28 +9,24 @@ __version__ = "0.1.0"
 
 from sphinx.application import Sphinx
 
-class FeedbackExtension:
+class BielExtension:
     DEFAULT_OPTIONS = {
-        'feedback_button_text': 'Send feedback',
-        'custom_font': None,
-        'error_message': None,
-        'error_message_4_0_3': None,
-        'error_message_4_0_4': None,
-        'modal_title': None,
-        'modal_title_success': None,
-        'modal_title_error': None,
-        'modal_position': "bottom-right",
-        'send_button_text': None,
-        'project': None,
-        'screenshot_button_tooltip_text': None,
-        'screenshot_topbar_text': None,
-        'email': None,
-        'email_placeholder': None,
-        'message_placeholder': None,
+        'button_text': 'Ask AI',
+        'header_title': 'Biel.ai chatbot',
         'button_style': "dark",
         'button_position': 'bottom-right',
-        'hide_icon': None,
-        'hide_screenshot_button': None,
+        'disable_input': None,
+        'error_message_default': None,
+        'error_message_4_0_3': None,
+        'error_message_4_0_4': None,
+        'expand_modal': None,
+        'footer_text': None,
+        'header_title': None,
+        'hide_expand_button': None,
+        'hide_feedback': None,
+        'initial_messages': None,
+        'modal_position': None,
+        'version': 'latest'
     }
 
     def __init__(self, app: Sphinx):
@@ -43,44 +39,46 @@ class FeedbackExtension:
         """Convert snake_case string to kebab-case."""
         return string.replace('_', '-')
 
-    def inject_feedback_scripts(self, app, pagename, templatename, context, doctree):
-        feedback_js_module = '''
-            <script type="module" src="https://cdn.jsdelivr.net/npm/pushfeedback/dist/pushfeedback/pushfeedback.esm.js"></script>
+    def inject_biel_scripts(self, app, pagename, templatename, context, doctree):
+        version = getattr(app.config, "biel_version", self.DEFAULT_OPTIONS['version'])
+        biel_js_module = f'''
+            <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search@{version}/dist/biel-search/biel-search.esm.js"></script>
         '''
 
-        # Add feedback JS module to body
+        # Add Biel JS module to body
         context.setdefault('body', '')
-        context['body'] += feedback_js_module
+        context['body'] += biel_js_module
 
-        if getattr(app.config, "pushfeedback_button_position", None) != "default":
+        if getattr(app.config, "biel_button_position", None) != "default":
             attribute_pairs = [
-                f'feedbackBtn.setAttribute("{self.snake_to_kebab(key)}", "{getattr(app.config, f"pushfeedback_{key}")}");'
-                for key in self.DEFAULT_OPTIONS.keys() if getattr(app.config, f"pushfeedback_{key}") is not None
+                f'bielBtn.setAttribute("{self.snake_to_kebab(key)}", "{getattr(app.config, f"biel_{key}")}");'
+                for key in self.DEFAULT_OPTIONS.keys() if getattr(app.config, f"biel_{key}") is not None
             ]
             set_attributes_script = "\n                    ".join(attribute_pairs)
             
-            feedback_button_text = getattr(app.config, "pushfeedback_feedback_button_text", self.DEFAULT_OPTIONS['feedback_button_text'])
+            button_text = getattr(app.config, "biel_button_text", self.DEFAULT_OPTIONS['button_text'])
 
-            feedback_script = f'''
+            biel_script = f'''
                 <script>
                     window.addEventListener('DOMContentLoaded', (event) => {{
-                        let feedbackBtn = document.createElement("feedback-button");
-                        feedbackBtn.innerHTML = "{feedback_button_text}";
+                        let bielBtn = document.createElement("biel-button");
+                        bielBtn.innerHTML = "{button_text}";
                         {set_attributes_script}
-                        document.body.appendChild(feedbackBtn);
+                        document.body.appendChild(bielBtn);
                     }});
                 </script>
             '''
-            context['body'] += feedback_script
+            context['body'] += biel_script
 
     def setup_options(self):
         for key in self.DEFAULT_OPTIONS.keys():
-            self.app.add_config_value(f'pushfeedback_{key}', self.DEFAULT_OPTIONS[key], 'html')
+            self.app.add_config_value(f'biel_{key}', self.DEFAULT_OPTIONS[key], 'html')
 
     def setup_events(self):
-        self.app.add_css_file('https://cdn.jsdelivr.net/npm/pushfeedback/dist/pushfeedback/pushfeedback.css')
-        self.app.connect('html-page-context', self.inject_feedback_scripts)
+        version = getattr(self.app.config, "biel_version", self.DEFAULT_OPTIONS["version"])
+        self.app.add_css_file(f'https://cdn.jsdelivr.net/npm/biel-search@{version}/dist/biel-search/biel-search.css')
+        self.app.connect('html-page-context', self.inject_biel_scripts)
 
 
 def setup(app: Sphinx):
-    extension = FeedbackExtension(app)
+    extension = BielExtension(app)
