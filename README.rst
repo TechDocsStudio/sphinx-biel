@@ -1,39 +1,36 @@
-#############################
-sphinxcontrib-ghcontributors
-#############################
+AI chatbot extension for Sphinx
+===============================
 
-Sphinx extension for rendering the contributors list from GitHub repositories.
+Ask AI chatbot plugin for Sphinx sites, powered by `Biel.ai <https://biel.ai>`_.
 
-*****
-Usage
-*****
+.. image:: https://biel.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcarousel-02.d9a9a331.png&w=1200&q=75
+   :alt: AI chatbot Sphinx
 
-This extension defines the directive `ghcontributors`, taking as an argument the GitHub username and repository.
+Add an AI chatbot to your Sphinx documentation using Biel.ai's extension. The integration works with any Sphinx theme, including Read the Docs, and adds both chat and search capabilities.
 
-.. code-block:: restructuredtext
+**Note:** A Biel.ai plan is required to use this plugin. Try it free for 14 days—no credit card required.
 
-    ..  ghcontributors::
-        :owner: dgarcia360
-        :repository: sphinxcontrib-ghcontributors
+Key features
+------------
 
+- AI chatbot that provides instant responses to documentation queries.  
+- AI search engine for quick and relevant information retrieval.  
+- Integration with Sphinx.  
+- Customizable to match your site's branding and user needs.  
 
-The contributors are sorted in descending order by the number of commits.
+Get started
+-----------
 
-.. image:: https://github.com/dgarcia360/sphinxcontrib-ghcontributors/blob/master/docs/example.png
-    :width: 150
+See the `Sphinx AI chatbot integration guide <https://docs.biel.ai/installation/sphinx>`_ for installation and setup instructions.
 
-************
-Installation
-************
+Support
+-------
 
-Install the extension using pip:
+Need assistance? `Contact us <https://docs.biel.ai/support>`_ for help.
 
-.. code-block:: shell
+License
+-------
 
-    pip install sphinxcontrib-ghcontributors
+Copyright (c) 2024 Biel.ai
 
-Add ``sphinxcontrib.ghcontributors`` as an extension in ``conf.py``
-
-.. code-block:: python
-
-    extensions = ['sphinxcontrib.ghcontributors']
+Licensed under the `MIT License <LICENSE>`_.
