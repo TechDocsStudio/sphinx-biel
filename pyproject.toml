@@ -5,7 +5,7 @@ module = "src.sphinx_biel"
 
 [project]
 name = "sphinx_biel"
-authors = [{name = "TechDocs Studio", email = "hi@techdocs.studio"}]
+authors = [{name = "TechDocs Studio", email = "info@techdocs.studio"}]
 readme = "README.rst"
 dynamic = ["version", "description"]
 

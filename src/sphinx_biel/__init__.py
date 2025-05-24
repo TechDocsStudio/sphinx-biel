@@ -11,33 +11,41 @@ from sphinx.application import Sphinx
 
 class BielExtension:
     DEFAULT_OPTIONS = {
+        # biel-button
         'project': None,
-        'button_text': 'Ask AI',
-        'header_title': 'Biel.ai chatbot',
-        'button_style': "dark",
         'button_position': 'bottom-right',
+        'button_text': 'Ask AI',
+        'button_style': "dark",
+        'custom_font': None,
+        'hide_icon': None,
+        'version': 'latest',
+
+        # biel-bot
         'disable_input': None,
-        'error_message_default': None,
+        'email': None,
+        'expand_modal': None,
+        'hide_close_button': None,
+        'hide_expand_button': None,
+        'hide_refresh_button': None,
+        'hide_feedback': None,
+        'modal_position': None,
+        'show_terms_modal': None,
+
+        # biel-bot text
         'error_message_4_0_3': None,
         'error_message_4_0_4': None,
-        'expand_modal': None,
+        'error_message_default': None,
         'footer_text': None,
-        'header_title': None,
-        'hide_expand_button': None,
-        'hide_feedback': None,
-        'initial_messages': None,
-        'modal_position': None,
-        'version': 'latest',
-        'custom_font': None,
-        'email': None,
-        'hide_icon': None,
+        'header_title': 'Biel.ai chatbot',
         'input_placeholder_text': None,
         'send_button_text': None,
+        'sources_text': None,
+        'suggested_questions': None,
         'suggested_questions_title': None,
-        'show_terms_modal': None,
-        'terms_title': None,
+        'terms_checkbox_text': None,
         'terms_description': None,
-        'terms_checkbox_text': None
+        'terms_title': None,
+        'welcome_message': None,
     }
 
     def __init__(self, app: Sphinx):
