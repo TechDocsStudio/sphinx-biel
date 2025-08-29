@@ -5,6 +5,15 @@ Changelog
 All notable changes to this project will be documented in this file.
 
 
+[0.1.6] - 29 August 2025
+========================
+
+Added
+-----
+
+* New ``ai_icon`` field for configuring the AI icon type.
+* New ``hide_avatars`` field for hiding avatar display.
+
 [1.0.5] - 22 June 2025
 =======================
 

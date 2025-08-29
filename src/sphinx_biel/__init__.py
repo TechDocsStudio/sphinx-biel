@@ -5,7 +5,7 @@ ASK AI chatbot for Sphinx.
 This code is licensed under MIT license (see LICENSE.md for details).
 """
 
-__version__ = "0.1.5"
+__version__ = "0.1.6"
 
 from sphinx.application import Sphinx
 
@@ -18,6 +18,8 @@ class BielExtension:
         'button_style': "dark",
         'custom_font': None,
         'hide_icon': None,
+        'ai_icon': None,
+        'hide_avatars': None,
         'version': 'latest',
         'api_key': None,
 
