@@ -5,6 +5,15 @@ Changelog
 All notable changes to this project will be documented in this file.
 
 
+[0.1.7] - 15 September 2025
+===========================
+
+Added
+-----
+
+* New ``hide_sources`` field for hiding sources.
+
+
 [0.1.6] - 29 August 2025
 ========================
 
