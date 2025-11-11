@@ -5,7 +5,7 @@ ASK AI chatbot for Sphinx.
 This code is licensed under MIT license (see LICENSE.md for details).
 """
 
-__version__ = "0.1.7"
+__version__ = "0.1.8"
 
 from sphinx.application import Sphinx
 
@@ -32,16 +32,24 @@ class BielExtension:
         'hide_refresh_button': None,
         'hide_sources': None,
         'hide_feedback': None,
+        'hide_think_mode_button': None,
+        'hide_tooltips': None,
         'modal_position': None,
         'show_terms_modal': None,
+        'think_mode_enabled': None,
 
         # biel-bot text
+        'assistant_label': None,
+        'close_button_text': None,
+        'collapse_button_text': None,
         'error_message_4_0_3': None,
         'error_message_4_0_4': None,
         'error_message_default': None,
+        'expand_button_text': None,
         'footer_text': None,
         'header_title': 'Biel.ai chatbot',
         'input_placeholder_text': None,
+        'refresh_button_text': None,
         'send_button_text': None,
         'sources_text': None,
         'suggested_questions': None,
@@ -49,6 +57,7 @@ class BielExtension:
         'terms_checkbox_text': None,
         'terms_description': None,
         'terms_title': None,
+        'think_mode_button_text': None,
         'welcome_message': None,
     }
 

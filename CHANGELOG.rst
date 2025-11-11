@@ -5,6 +5,16 @@ Changelog
 All notable changes to this project will be documented in this file.
 
 
+[0.1.7] - 11 November 2025
+
+Added
+-----
+
+* New ``hide_think_mode_button`` field for hiding the think mode button.
+* New ``hide_tooltips`` field for hiding the tooltips.
+* New ``think_mode_enabled`` field for enabling the think mode.
+* New ``think_mode_button_text`` field for configuring the think mode button text.
+
 [0.1.7] - 15 September 2025
 ===========================
 
