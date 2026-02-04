@@ -5,6 +5,11 @@ Changelog
 All notable changes to this project will be documented in this file.
 
 
+[0.1.9] - 04 February 2026
+
+
+* New ``metadata`` field.
+
 [0.1.7] - 11 November 2025
 
 Added
