@@ -5,7 +5,7 @@ ASK AI chatbot for Sphinx.
 This code is licensed under MIT license (see LICENSE.md for details).
 """
 
-__version__ = "0.1.9"
+__version__ = "0.1.10"
 
 from sphinx.application import Sphinx
 
@@ -29,12 +29,16 @@ class BielExtension:
         "email": None,
         "expand_modal": None,
         "hide_close_button": None,
+        "hide_connect_button": None,
         "hide_expand_button": None,
         "hide_refresh_button": None,
+        "hide_settings_button": None,
         "hide_sources": None,
         "hide_feedback": None,
         "hide_think_mode_button": None,
         "hide_tooltips": None,
+        "initial_messages": None,
+        "keep_conversation": None,
         "modal_position": None,
         "show_terms_modal": None,
         "think_mode_enabled": None,
@@ -42,6 +46,7 @@ class BielExtension:
         "assistant_label": None,
         "close_button_text": None,
         "collapse_button_text": None,
+        "connect_button_text": None,
         "error_message_4_0_3": None,
         "error_message_4_0_4": None,
         "error_message_default": None,
@@ -49,15 +54,34 @@ class BielExtension:
         "footer_text": None,
         "header_title": "Biel.ai chatbot",
         "input_placeholder_text": None,
+        "mcp_claude_copied_description": None,
+        "mcp_claude_description": None,
+        "mcp_claude_text": None,
+        "mcp_copied_text": None,
+        "mcp_copilot_description": None,
+        "mcp_copilot_text": None,
+        "mcp_cursor_description": None,
+        "mcp_cursor_text": None,
+        "mcp_server_url": None,
+        "mcp_url_copied_description": None,
+        "mcp_url_description": None,
+        "mcp_url_text": None,
         "refresh_button_text": None,
         "send_button_text": None,
+        "settings_button_text": None,
         "sources_text": None,
         "suggested_questions": None,
         "suggested_questions_title": None,
         "terms_checkbox_text": None,
         "terms_description": None,
         "terms_title": None,
+        "think_mode_auto_description": None,
+        "think_mode_auto_text": None,
         "think_mode_button_text": None,
+        "think_mode_fast_description": None,
+        "think_mode_fast_text": None,
+        "think_mode_think_description": None,
+        "think_mode_think_text": None,
         "welcome_message": None,
     }
 

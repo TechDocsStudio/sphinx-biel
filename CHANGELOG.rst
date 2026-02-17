@@ -5,6 +5,36 @@ Changelog
 All notable changes to this project will be documented in this file.
 
 
+[0.1.10] - 17 February 2026
+
+Added
+-----
+
+* New ``hide_connect_button`` field for hiding the connect button.
+* New ``hide_settings_button`` field for hiding the settings button.
+* New ``initial_messages`` field for configuring initial messages.
+* New ``keep_conversation`` field for keeping the conversation.
+* New ``connect_button_text`` field for configuring the connect button text.
+* New ``mcp_claude_copied_description`` field for configuring MCP Claude copied description.
+* New ``mcp_claude_description`` field for configuring MCP Claude description.
+* New ``mcp_claude_text`` field for configuring MCP Claude text.
+* New ``mcp_copied_text`` field for configuring MCP copied text.
+* New ``mcp_copilot_description`` field for configuring MCP Copilot description.
+* New ``mcp_copilot_text`` field for configuring MCP Copilot text.
+* New ``mcp_cursor_description`` field for configuring MCP Cursor description.
+* New ``mcp_cursor_text`` field for configuring MCP Cursor text.
+* New ``mcp_server_url`` field for configuring the MCP server URL.
+* New ``mcp_url_copied_description`` field for configuring MCP URL copied description.
+* New ``mcp_url_description`` field for configuring MCP URL description.
+* New ``mcp_url_text`` field for configuring MCP URL text.
+* New ``settings_button_text`` field for configuring the settings button text.
+* New ``think_mode_auto_description`` field for configuring think mode auto description.
+* New ``think_mode_auto_text`` field for configuring think mode auto text.
+* New ``think_mode_fast_description`` field for configuring think mode fast description.
+* New ``think_mode_fast_text`` field for configuring think mode fast text.
+* New ``think_mode_think_description`` field for configuring think mode think description.
+* New ``think_mode_think_text`` field for configuring think mode think text.
+
 [0.1.9] - 04 February 2026
 
 
