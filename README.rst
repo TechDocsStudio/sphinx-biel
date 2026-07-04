@@ -3,7 +3,7 @@ AI chatbot extension for Sphinx
 
 Ask AI chatbot plugin for Sphinx sites, powered by `Biel.ai <https://biel.ai>`_.
 
-.. image:: https://biel.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcarousel-02.d9a9a331.png&w=1200&q=75
+.. image:: https://docs.biel.ai/assets/images/biel-widget-docs-bd28548cf26a37bcb7c496487280bbfe.png
    :alt: AI chatbot Sphinx
 
 Add an AI chatbot to your Sphinx documentation using Biel.ai's extension. The integration works with any Sphinx theme, including Read the Docs, and adds both chat and search capabilities.
