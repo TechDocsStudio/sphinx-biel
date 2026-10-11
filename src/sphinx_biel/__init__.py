@@ -7,82 +7,41 @@ This code is licensed under MIT license (see LICENSE.md for details).
 
 __version__ = "0.1.10"
 
+import json
+from importlib.resources import files
+from urllib.parse import quote
+
 from sphinx.application import Sphinx
+
+_WIDGET = json.loads(files(__package__).joinpath("widget_options.json").read_text())
+
+
+def _script_json(value):
+    encoded = json.dumps(value, ensure_ascii=False)
+    for char in "<>&\u2028\u2029":
+        encoded = encoded.replace(char, f"\\u{ord(char):04x}")
+    return encoded
 
 
 class BielExtension:
-    DEFAULT_OPTIONS = {
-        # biel-button
+    DEFAULT_OPTIONS = {key: None for key in _WIDGET["options"]}
+    DEFAULT_OPTIONS.update({
         "project": None,
         "button_position": "bottom-right",
         "button_text": "Ask AI",
         "button_style": "dark",
-        "custom_font": None,
-        "hide_icon": None,
-        "ai_icon": None,
-        "hide_avatars": None,
-        "version": "latest",
-        "api_key": None,
-        "metadata": None,
-        # biel-bot
-        "disable_input": None,
-        "email": None,
-        "expand_modal": None,
-        "hide_close_button": None,
-        "hide_connect_button": None,
-        "hide_expand_button": None,
-        "hide_refresh_button": None,
-        "hide_settings_button": None,
-        "hide_sources": None,
-        "hide_feedback": None,
-        "hide_think_mode_button": None,
-        "hide_tooltips": None,
-        "initial_messages": None,
-        "keep_conversation": None,
-        "modal_position": None,
-        "show_terms_modal": None,
-        "think_mode_enabled": None,
-        # biel-bot text
-        "assistant_label": None,
-        "close_button_text": None,
-        "collapse_button_text": None,
-        "connect_button_text": None,
+        "header_title": "Biel.ai chatbot",
+        "version": _WIDGET["version"],
+        # Retain the earlier config spellings as aliases of canonical widget props.
         "error_message_4_0_3": None,
         "error_message_4_0_4": None,
-        "error_message_default": None,
-        "expand_button_text": None,
-        "footer_text": None,
-        "header_title": "Biel.ai chatbot",
-        "input_placeholder_text": None,
-        "mcp_claude_copied_description": None,
-        "mcp_claude_description": None,
-        "mcp_claude_text": None,
-        "mcp_copied_text": None,
-        "mcp_copilot_description": None,
-        "mcp_copilot_text": None,
-        "mcp_cursor_description": None,
-        "mcp_cursor_text": None,
-        "mcp_server_url": None,
-        "mcp_url_copied_description": None,
-        "mcp_url_description": None,
-        "mcp_url_text": None,
-        "refresh_button_text": None,
-        "send_button_text": None,
-        "settings_button_text": None,
-        "sources_text": None,
-        "suggested_questions": None,
-        "suggested_questions_title": None,
-        "terms_checkbox_text": None,
-        "terms_description": None,
-        "terms_title": None,
-        "think_mode_auto_description": None,
-        "think_mode_auto_text": None,
+        "hide_think_mode_button": None,
         "think_mode_button_text": None,
-        "think_mode_fast_description": None,
-        "think_mode_fast_text": None,
-        "think_mode_think_description": None,
-        "think_mode_think_text": None,
-        "welcome_message": None,
+    })
+    ALIASES = {"error_message_4_0_3": "error_message403", "error_message_4_0_4": "error_message404"}
+    LEGACY_OPTIONS = {
+        "hide_think_mode_button": {"property": "hideThinkModeButton", "attribute": "hide-think-mode-button"},
+        "think_mode_button_text": {"property": "thinkModeButtonText", "attribute": "think-mode-button-text"},
     }
 
     def __init__(self, app: Sphinx):
@@ -90,53 +49,47 @@ class BielExtension:
         self.setup_options()
         self.setup_events()
 
-    @staticmethod
-    def snake_to_kebab(string):
-        """Convert snake_case string to kebab-case."""
-        return string.replace("_", "-")
-
     def inject_biel_scripts(self, app, pagename, templatename, context, doctree):
-        version = getattr(app.config, "biel_version", self.DEFAULT_OPTIONS["version"])
-        biel_js_module = f"""
-            <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search@{version}/dist/biel-search/biel-search.esm.js"></script>
+        version = quote(str(app.config.biel_version), safe="")
+        context.setdefault("body", "")
+        context["body"] += (
+            '<script type="module" src="https://cdn.jsdelivr.net/npm/biel-search@'
+            f'{version}/dist/biel-search/biel-search.esm.js"></script>'
+        )
+        if app.config.biel_button_position == "default":
+            return
+        props = []
+        for key in self.DEFAULT_OPTIONS:
+            value = getattr(app.config, f"biel_{key}")
+            canonical = self.ALIASES.get(key, key)
+            metadata = _WIDGET["options"].get(canonical) or self.LEGACY_OPTIONS.get(canonical)
+            if value is not None and metadata:
+                props.append([metadata["property"], metadata["attribute"], value])
+        payload = _script_json({"props": props, "text": app.config.biel_button_text})
+        context["body"] += f"""
+            <script>
+                window.addEventListener('DOMContentLoaded', async () => {{
+                    await customElements.whenDefined('biel-button');
+                    const options = {payload};
+                    const bielBtn = document.createElement('biel-button');
+                    options.props.forEach(([property, attribute, value]) => {{
+                        bielBtn[property] = value;
+                        if (attribute && (value === null || typeof value !== 'object')) {{
+                            bielBtn.setAttribute(attribute, String(value));
+                        }}
+                    }});
+                    bielBtn.textContent = options.text;
+                    document.body.appendChild(bielBtn);
+                }});
+            </script>
         """
 
-        # Add Biel JS module to body
-        context.setdefault("body", "")
-        context["body"] += biel_js_module
-
-        if getattr(app.config, "biel_button_position", None) != "default":
-            attribute_pairs = [
-                f'bielBtn.setAttribute("{self.snake_to_kebab(key)}", "{getattr(app.config, f"biel_{key}")}");'
-                for key in self.DEFAULT_OPTIONS.keys()
-                if getattr(app.config, f"biel_{key}") is not None
-            ]
-            set_attributes_script = "\n                    ".join(attribute_pairs)
-
-            button_text = getattr(
-                app.config, "biel_button_text", self.DEFAULT_OPTIONS["button_text"]
-            )
-
-            biel_script = f'''
-                <script>
-                    window.addEventListener('DOMContentLoaded', (event) => {{
-                        let bielBtn = document.createElement("biel-button");
-                        bielBtn.innerHTML = "{button_text}";
-                        {set_attributes_script}
-                        document.body.appendChild(bielBtn);
-                    }});
-                </script>
-            '''
-            context["body"] += biel_script
-
     def setup_options(self):
-        for key in self.DEFAULT_OPTIONS.keys():
-            self.app.add_config_value(f"biel_{key}", self.DEFAULT_OPTIONS[key], "html")
+        for key, default in self.DEFAULT_OPTIONS.items():
+            self.app.add_config_value(f"biel_{key}", default, "html")
 
     def setup_events(self):
-        version = getattr(
-            self.app.config, "biel_version", self.DEFAULT_OPTIONS["version"]
-        )
+        version = quote(str(self.app.config.biel_version), safe="")
         self.app.add_css_file(
             f"https://cdn.jsdelivr.net/npm/biel-search@{version}/dist/biel-search/biel-search.css"
         )
@@ -144,7 +97,7 @@ class BielExtension:
 
 
 def setup(app: Sphinx):
-    extension = BielExtension(app)
+    BielExtension(app)
     return {
         "version": __version__,
         "parallel_read_safe": True,
