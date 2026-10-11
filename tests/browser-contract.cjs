@@ -11,7 +11,7 @@ const widget = path.join(
 const site = path.resolve(process.argv[2]);
 const expected = JSON.parse(fs.readFileSync(path.join(site, "expected.json")));
 const prefix =
-  "https://cdn.jsdelivr.net/npm/biel-search@0.1.94/dist/biel-search/";
+  "https://cdn.jsdelivr.net/npm/biel-search@latest/dist/biel-search/";
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, "http://localhost");
   const file = path.resolve(

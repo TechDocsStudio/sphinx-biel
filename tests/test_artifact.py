@@ -33,7 +33,8 @@ class WheelContract(unittest.TestCase):
             html = (root / 'build/index.html').read_text()
             self.assertNotIn('window.injected=1</script>', html)
             self.assertIn('\\u003c/script\\u003e', html)
-            self.assertIn('biel-search@0.1.94', html)
+            self.assertIn('biel-search@latest/dist/biel-search/biel-search.esm.js', html)
+            self.assertIn('biel-search@latest/dist/biel-search/biel-search.css', html)
             self.assertNotIn('bielBtn.innerHTML', html)
             self.assertIn('"errorMessage403", "error-message-4-0-3"', html)
             self.assertIn('"renderMath", "render-math", false', html)
@@ -46,6 +47,35 @@ class WheelContract(unittest.TestCase):
                 (output / 'index.html').write_text(html)
                 (output / 'expected.json').write_text(json.dumps(props))
             print(f'PASS installed Sphinx {sphinx.__version__}: wheel metadata, real HTML build and safe serialized options')
+
+
+    def test_explicit_widget_version_is_preserved_and_url_encoded(self):
+        self.assertNotIn('/src/', sphinx_biel.__file__)
+        for version, encoded in (
+            ('0.1.94', '0.1.94'),
+            ('0.1.94/custom tag', '0.1.94%2Fcustom%20tag'),
+        ):
+            with self.subTest(version=version):
+                with tempfile.TemporaryDirectory(prefix='biel-sphinx-version-') as temporary:
+                    root = Path(temporary)
+                    (root / 'conf.py').write_text(
+                        "extensions=['sphinx_biel']\nmaster_doc='index'\n"
+                        f"biel_version={version!r}\n"
+                    )
+                    (root / 'index.rst').write_text(
+                        'Version override\n================\n\nLocal fixture.\n'
+                    )
+                    subprocess.run(
+                        [sys.executable, '-m', 'sphinx', '-b', 'html', '-W',
+                         '--keep-going', str(root), str(root / 'build')],
+                        check=True,
+                    )
+                    html = (root / 'build/index.html').read_text()
+                    prefix = f'https://cdn.jsdelivr.net/npm/biel-search@{encoded}/dist/biel-search/'
+                    self.assertIn(prefix + 'biel-search.esm.js', html)
+                    self.assertIn(prefix + 'biel-search.css', html)
+                    self.assertNotIn('biel-search@latest/', html)
+        print(f'PASS installed Sphinx {sphinx.__version__}: explicit numeric version and encoded override in real HTML')
 
 
 if __name__ == '__main__':

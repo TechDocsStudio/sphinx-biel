@@ -31,7 +31,7 @@ class BielExtension:
         "button_text": "Ask AI",
         "button_style": "dark",
         "header_title": "Biel.ai chatbot",
-        "version": _WIDGET["version"],
+        "version": "latest",
         # Retain the earlier config spellings as aliases of canonical widget props.
         "error_message_4_0_3": None,
         "error_message_4_0_4": None,
