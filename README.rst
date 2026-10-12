@@ -21,7 +21,7 @@ Key features
 Get started
 -----------
 
-See the `Sphinx AI chatbot integration guide <https://docs.biel.ai/installation/sphinx>`_ for installation and setup instructions.
+See the `Sphinx AI chatbot integration guide <https://docs.biel.ai/installation/sphinx>`_ for installation and setup instructions, including `selecting a widget version <https://docs.biel.ai/installation/sphinx#select-a-widget-version>`_.
 
 Support
 -------
@@ -38,7 +38,7 @@ Licensed under the `MIT License <LICENSE>`_.
 Widget compatibility and development
 ------------------------------------
 
-The default CDN version is ``latest``. Set ``biel_version`` explicitly to keep a specific published version, such as ``0.1.94``. Option metadata was generated from the published ``biel-search`` 0.1.94 collection; that provenance version does not select the runtime artifact. Quote/Unicode/script-closing values are serialized safely, booleans remain booleans, arrays/objects become properties after the element is defined, and ``biel_button_text`` is literal text. The previous error-message and think-mode config spellings remain accepted for compatibility. ``biel_button_position = "default"`` still suppresses the floating button.
+Option metadata was generated from the published ``biel-search`` 0.1.94 collection; that provenance version does not select the runtime artifact. Quote/Unicode/script-closing values are serialized safely, booleans remain booleans, arrays/objects become properties after the element is defined, and ``biel_button_text`` is literal text. The previous error-message and think-mode config spellings remain accepted for compatibility. ``biel_button_position = "default"`` still suppresses the floating button.
 
 The installed-wheel matrix passed real HTML builds on Sphinx 7.4.7, 8.2.3 and 9.1.0 with Python 3.13.3. The package declares Python >=3.9 and Sphinx >=7,<10; use a Python version supported by your selected Sphinx release. Browser checks intercept the emitted ``latest`` CDN URLs and serve the locally installed 0.1.94 widget with synthetic API/WS and blocked external requests.
 
