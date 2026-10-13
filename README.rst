@@ -23,6 +23,10 @@ Get started
 
 See the `Sphinx AI chatbot integration guide <https://docs.biel.ai/installation/sphinx>`_ for installation and setup instructions, including `selecting a widget version <https://docs.biel.ai/installation/sphinx#select-a-widget-version>`_.
 
+The extension loads the widget's JavaScript and CSS from the CDN. It uses
+``latest`` by default; set ``biel_version`` in ``conf.py`` to choose a specific
+release. You do not need to install ``biel-search`` with npm.
+
 Support
 -------
 
@@ -35,15 +39,19 @@ Copyright (c) 2024 Biel.ai
 
 Licensed under the `MIT License <LICENSE>`_.
 
-Widget compatibility and development
-------------------------------------
+Development
+-----------
 
-Option metadata was generated from the published ``biel-search`` 0.1.94 collection; that provenance version does not select the runtime artifact. Quote/Unicode/script-closing values are serialized safely, booleans remain booleans, arrays/objects become properties after the element is defined, and ``biel_button_text`` is literal text. The previous error-message and think-mode config spellings remain accepted for compatibility. ``biel_button_position = "default"`` still suppresses the floating button.
+Widget option metadata is included in the Python package. To refresh it, unpack
+the published widget and run
+``python tools/update_widget_options.py /path/to/biel-search``. This reads the
+widget's property definitions without executing its JavaScript.
 
-The installed-wheel matrix passed real HTML builds on Sphinx 7.4.7, 8.2.3 and 9.1.0 with Python 3.13.3. The package declares Python >=3.9 and Sphinx >=7,<10; use a Python version supported by your selected Sphinx release. Browser checks intercept the emitted ``latest`` CDN URLs and serve the locally installed 0.1.94 widget with synthetic API/WS and blocked external requests.
+Build with ``python -m build --wheel``, install the wheel in a separate Sphinx
+environment, and run ``python tests/test_artifact.py /tmp/biel-sphinx-site``.
+This checks the generated HTML, typed settings and version overrides.
 
-Build with ``python -m build --wheel``, install the wheel into an isolated Sphinx environment, and run ``python tests/test_artifact.py /tmp/biel-sphinx-site``. With Puppeteer 24.43.1 and biel-search 0.1.94 installed in a separate local Node tool directory, set NODE_PATH to its node_modules and run ``PUPPETEER_EXECUTABLE_PATH=/path/to/trusted/chrome node tests/browser-contract.cjs /tmp/biel-sphinx-site``. This checks literal labels, safe script serialization, false booleans, arrays, the button event and actual bot props.
-
-To refresh option metadata, unpack the chosen published widget and run ``python tools/update_widget_options.py /path/to/biel-search``; review the generated metadata/version and repeat the wheel/framework/browser checks. The generator reads compiler-emitted property JSON without executing JavaScript. No hand-copied widget declarations are maintained.
-
-The local 0.1.94 validation artifact does not include the separate, unpublished widget sanitizer/dependency remediation. The browser check validates this extension against that installed artifact; it does not fetch or attest whichever version the CDN serves as ``latest``. Refresh the metadata and repeat the artifact/browser matrix after a widget release.
+The browser test also needs Puppeteer and a local widget package for its test
+fixtures. Set ``NODE_PATH`` to that test environment's ``node_modules`` and run
+``PUPPETEER_EXECUTABLE_PATH=/path/to/chrome node tests/browser-contract.cjs /tmp/biel-sphinx-site``.
+It uses local sample replies to check the button and chatbot settings.
