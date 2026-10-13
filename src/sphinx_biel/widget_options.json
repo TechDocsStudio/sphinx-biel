@@ -1,0 +1,410 @@
+{
+  "options": {
+    "ai_icon": {
+      "attribute": "ai-icon",
+      "property": "aiIcon",
+      "type": "string"
+    },
+    "api_key": {
+      "attribute": "api-key",
+      "property": "apiKey",
+      "type": "string"
+    },
+    "api_url": {
+      "attribute": "api-url",
+      "property": "apiUrl",
+      "type": "string"
+    },
+    "assistant_label": {
+      "attribute": "assistant-label",
+      "property": "assistantLabel",
+      "type": "string"
+    },
+    "biel_id": {
+      "attribute": "biel-id",
+      "property": "bielId",
+      "type": "string"
+    },
+    "button_position": {
+      "attribute": "button-position",
+      "property": "buttonPosition",
+      "type": "string"
+    },
+    "button_style": {
+      "attribute": "button-style",
+      "property": "buttonStyle",
+      "type": "string"
+    },
+    "close_button_text": {
+      "attribute": "close-button-text",
+      "property": "closeButtonText",
+      "type": "string"
+    },
+    "collapse_button_text": {
+      "attribute": "collapse-button-text",
+      "property": "collapseButtonText",
+      "type": "string"
+    },
+    "connect_button_text": {
+      "attribute": "connect-button-text",
+      "property": "connectButtonText",
+      "type": "string"
+    },
+    "continue_text": {
+      "attribute": "continue-text",
+      "property": "continueText",
+      "type": "string"
+    },
+    "custom_font": {
+      "attribute": "custom-font",
+      "property": "customFont",
+      "type": "boolean"
+    },
+    "default_think_mode": {
+      "attribute": "default-think-mode",
+      "property": "defaultThinkMode",
+      "type": "string"
+    },
+    "disable_autofocus": {
+      "attribute": "disable-autofocus",
+      "property": "disableAutofocus",
+      "type": "boolean"
+    },
+    "disable_input": {
+      "attribute": "disable-input",
+      "property": "disableInput",
+      "type": "boolean"
+    },
+    "email": {
+      "attribute": "email",
+      "property": "email",
+      "type": "string"
+    },
+    "error_message403": {
+      "attribute": "error-message-4-0-3",
+      "property": "errorMessage403",
+      "type": "string"
+    },
+    "error_message404": {
+      "attribute": "error-message-4-0-4",
+      "property": "errorMessage404",
+      "type": "string"
+    },
+    "error_message_default": {
+      "attribute": "error-message-default",
+      "property": "errorMessageDefault",
+      "type": "string"
+    },
+    "expand_button_text": {
+      "attribute": "expand-button-text",
+      "property": "expandButtonText",
+      "type": "string"
+    },
+    "expand_modal": {
+      "attribute": "expand-modal",
+      "property": "expandModal",
+      "type": "boolean"
+    },
+    "footer_text": {
+      "attribute": "footer-text",
+      "property": "footerText",
+      "type": "string"
+    },
+    "header_title": {
+      "attribute": "header-title",
+      "property": "headerTitle",
+      "type": "string"
+    },
+    "hide_avatars": {
+      "attribute": "hide-avatars",
+      "property": "hideAvatars",
+      "type": "boolean"
+    },
+    "hide_close_button": {
+      "attribute": "hide-close-button",
+      "property": "hideCloseButton",
+      "type": "boolean"
+    },
+    "hide_connect_button": {
+      "attribute": "hide-connect-button",
+      "property": "hideConnectButton",
+      "type": "boolean"
+    },
+    "hide_expand_button": {
+      "attribute": "hide-expand-button",
+      "property": "hideExpandButton",
+      "type": "boolean"
+    },
+    "hide_feedback": {
+      "attribute": "hide-feedback",
+      "property": "hideFeedback",
+      "type": "boolean"
+    },
+    "hide_icon": {
+      "attribute": "hide-icon",
+      "property": "hideIcon",
+      "type": "boolean"
+    },
+    "hide_inline_citations": {
+      "attribute": "hide-inline-citations",
+      "property": "hideInlineCitations",
+      "type": "boolean"
+    },
+    "hide_refresh_button": {
+      "attribute": "hide-refresh-button",
+      "property": "hideRefreshButton",
+      "type": "boolean"
+    },
+    "hide_settings_button": {
+      "attribute": "hide-settings-button",
+      "property": "hideSettingsButton",
+      "type": "boolean"
+    },
+    "hide_sources": {
+      "attribute": "hide-sources",
+      "property": "hideSources",
+      "type": "boolean"
+    },
+    "hide_tooltips": {
+      "attribute": "hide-tooltips",
+      "property": "hideTooltips",
+      "type": "boolean"
+    },
+    "incomplete_text": {
+      "attribute": "incomplete-text",
+      "property": "incompleteText",
+      "type": "string"
+    },
+    "initial_messages": {
+      "attribute": null,
+      "property": "initialMessages",
+      "type": "unknown"
+    },
+    "input_placeholder_text": {
+      "attribute": "input-placeholder-text",
+      "property": "inputPlaceholderText",
+      "type": "string"
+    },
+    "keep_conversation": {
+      "attribute": "keep-conversation",
+      "property": "keepConversation",
+      "type": "boolean"
+    },
+    "loading_indicator": {
+      "attribute": "loading-indicator",
+      "property": "loadingIndicator",
+      "type": "string"
+    },
+    "loading_text": {
+      "attribute": "loading-text",
+      "property": "loadingText",
+      "type": "string"
+    },
+    "mathjax_url": {
+      "attribute": "mathjax-url",
+      "property": "mathjaxUrl",
+      "type": "string"
+    },
+    "mcp_claude_copied_description": {
+      "attribute": "mcp-claude-copied-description",
+      "property": "mcpClaudeCopiedDescription",
+      "type": "string"
+    },
+    "mcp_claude_description": {
+      "attribute": "mcp-claude-description",
+      "property": "mcpClaudeDescription",
+      "type": "string"
+    },
+    "mcp_claude_text": {
+      "attribute": "mcp-claude-text",
+      "property": "mcpClaudeText",
+      "type": "string"
+    },
+    "mcp_codex_copied_description": {
+      "attribute": "mcp-codex-copied-description",
+      "property": "mcpCodexCopiedDescription",
+      "type": "string"
+    },
+    "mcp_codex_description": {
+      "attribute": "mcp-codex-description",
+      "property": "mcpCodexDescription",
+      "type": "string"
+    },
+    "mcp_codex_text": {
+      "attribute": "mcp-codex-text",
+      "property": "mcpCodexText",
+      "type": "string"
+    },
+    "mcp_copied_text": {
+      "attribute": "mcp-copied-text",
+      "property": "mcpCopiedText",
+      "type": "string"
+    },
+    "mcp_copilot_description": {
+      "attribute": "mcp-copilot-description",
+      "property": "mcpCopilotDescription",
+      "type": "string"
+    },
+    "mcp_copilot_text": {
+      "attribute": "mcp-copilot-text",
+      "property": "mcpCopilotText",
+      "type": "string"
+    },
+    "mcp_cursor_description": {
+      "attribute": "mcp-cursor-description",
+      "property": "mcpCursorDescription",
+      "type": "string"
+    },
+    "mcp_cursor_text": {
+      "attribute": "mcp-cursor-text",
+      "property": "mcpCursorText",
+      "type": "string"
+    },
+    "mcp_server_url": {
+      "attribute": "mcp-server-url",
+      "property": "mcpServerUrl",
+      "type": "string"
+    },
+    "mcp_url_copied_description": {
+      "attribute": "mcp-url-copied-description",
+      "property": "mcpUrlCopiedDescription",
+      "type": "string"
+    },
+    "mcp_url_description": {
+      "attribute": "mcp-url-description",
+      "property": "mcpUrlDescription",
+      "type": "string"
+    },
+    "mcp_url_text": {
+      "attribute": "mcp-url-text",
+      "property": "mcpUrlText",
+      "type": "string"
+    },
+    "mermaid_theme": {
+      "attribute": "mermaid-theme",
+      "property": "mermaidTheme",
+      "type": "string"
+    },
+    "message_too_long_text": {
+      "attribute": "message-too-long-text",
+      "property": "messageTooLongText",
+      "type": "string"
+    },
+    "metadata": {
+      "attribute": "metadata",
+      "property": "metadata",
+      "type": "string"
+    },
+    "modal_position": {
+      "attribute": "modal-position",
+      "property": "modalPosition",
+      "type": "string"
+    },
+    "project": {
+      "attribute": "project",
+      "property": "project",
+      "type": "string"
+    },
+    "refresh_button_text": {
+      "attribute": "refresh-button-text",
+      "property": "refreshButtonText",
+      "type": "string"
+    },
+    "render_diagrams": {
+      "attribute": "render-diagrams",
+      "property": "renderDiagrams",
+      "type": "boolean"
+    },
+    "render_math": {
+      "attribute": "render-math",
+      "property": "renderMath",
+      "type": "boolean"
+    },
+    "send_button_text": {
+      "attribute": "send-button-text",
+      "property": "sendButtonText",
+      "type": "string"
+    },
+    "settings_button_text": {
+      "attribute": "settings-button-text",
+      "property": "settingsButtonText",
+      "type": "string"
+    },
+    "show_terms_modal": {
+      "attribute": "show-terms-modal",
+      "property": "showTermsModal",
+      "type": "boolean"
+    },
+    "sources_text": {
+      "attribute": "sources-text",
+      "property": "sourcesText",
+      "type": "string"
+    },
+    "suggested_questions": {
+      "attribute": "suggested-questions",
+      "property": "suggestedQuestions",
+      "type": "string"
+    },
+    "suggested_questions_title": {
+      "attribute": "suggested-questions-title",
+      "property": "suggestedQuestionsTitle",
+      "type": "string"
+    },
+    "terms_checkbox_text": {
+      "attribute": "terms-checkbox-text",
+      "property": "termsCheckboxText",
+      "type": "string"
+    },
+    "terms_description": {
+      "attribute": "terms-description",
+      "property": "termsDescription",
+      "type": "string"
+    },
+    "terms_title": {
+      "attribute": "terms-title",
+      "property": "termsTitle",
+      "type": "string"
+    },
+    "think_mode_auto_description": {
+      "attribute": "think-mode-auto-description",
+      "property": "thinkModeAutoDescription",
+      "type": "string"
+    },
+    "think_mode_auto_text": {
+      "attribute": "think-mode-auto-text",
+      "property": "thinkModeAutoText",
+      "type": "string"
+    },
+    "think_mode_enabled": {
+      "attribute": "think-mode-enabled",
+      "property": "thinkModeEnabled",
+      "type": "boolean"
+    },
+    "think_mode_fast_description": {
+      "attribute": "think-mode-fast-description",
+      "property": "thinkModeFastDescription",
+      "type": "string"
+    },
+    "think_mode_fast_text": {
+      "attribute": "think-mode-fast-text",
+      "property": "thinkModeFastText",
+      "type": "string"
+    },
+    "think_mode_think_description": {
+      "attribute": "think-mode-think-description",
+      "property": "thinkModeThinkDescription",
+      "type": "string"
+    },
+    "think_mode_think_text": {
+      "attribute": "think-mode-think-text",
+      "property": "thinkModeThinkText",
+      "type": "string"
+    },
+    "welcome_message": {
+      "attribute": "welcome-message",
+      "property": "welcomeMessage",
+      "type": "string"
+    }
+  },
+  "version": "0.1.94"
+}
