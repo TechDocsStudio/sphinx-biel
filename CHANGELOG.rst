@@ -5,6 +5,38 @@ Changelog
 All notable changes to this project will be documented in this file.
 
 
+[0.1.11] - 13 October 2026
+=========================
+
+Added
+-----
+
+* 19 additional configuration settings, bringing the total to 87:
+  ``api_url``, ``biel_id``, ``continue_text``, ``default_think_mode``,
+  ``disable_autofocus``, ``error_message403``, ``error_message404``,
+  ``hide_inline_citations``, ``incomplete_text``, ``loading_indicator``,
+  ``loading_text``, ``mathjax_url``, ``mcp_codex_copied_description``,
+  ``mcp_codex_description``, ``mcp_codex_text``, ``mermaid_theme``,
+  ``message_too_long_text``, ``render_diagrams`` and ``render_math``.
+
+Changed
+-------
+
+* Moved widget option definitions into the packaged ``widget_options.json``
+  file, loaded by Python to reduce duplicated definitions. All 68 existing
+  settings, their defaults and legacy option names remain supported.
+* Button labels now display as plain text. HTML in ``biel_button_text`` no
+  longer renders as markup.
+
+Fixed
+-----
+
+* Safely serialize configuration containing quotes, Unicode, booleans and
+  lists, and preserve typed values when configuring the widget.
+* Wait for the widget's custom element to be defined before applying settings.
+* URL-encode ``biel_version`` overrides in the widget's JavaScript and CSS URLs.
+
+
 [0.1.10] - 17 February 2026
 
 Added

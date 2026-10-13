@@ -42,6 +42,9 @@ Licensed under the `MIT License <LICENSE>`_.
 Development
 -----------
 
+For a reusable Sphinx project to test locally, see ``demo/README.rst``.
+The demo is excluded from published wheels and source distributions.
+
 Widget option metadata is included in the Python package. To refresh it, unpack
 the published widget and run
 ``python tools/update_widget_options.py /path/to/biel-search``. This reads the

@@ -12,3 +12,6 @@ dependencies = ["Sphinx>=7,<10"]
 
 [project.urls]
 Home = "https://github.com/TechDocsStudio/sphinx-biel"
+
+[tool.flit.sdist]
+exclude = ["demo/"]

@@ -11,3 +11,5 @@ dist
 docs/build
 __pycache__
 venv
+.venv/
+demo/_build/
