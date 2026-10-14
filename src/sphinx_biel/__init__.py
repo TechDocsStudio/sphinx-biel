@@ -5,7 +5,7 @@ Biel.ai AI assistant for Sphinx documentation.
 This code is licensed under MIT license (see LICENSE.md for details).
 """
 
-__version__ = "0.1.11"
+__version__ = "0.1.12"
 
 import json
 from importlib.resources import files
