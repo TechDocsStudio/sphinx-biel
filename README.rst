@@ -1,12 +1,12 @@
 AI assistant extension for Sphinx
 =================================
 
-Add the `Biel.ai <https://biel.ai>`_ AI assistant to your Sphinx documentation. Help readers get answers grounded in your documentation, with links to the sources.
+Add the `Biel.ai <https://biel.ai>`_ AI assistant and documentation search to your Sphinx documentation. Help readers get answers grounded in your documentation, with links to the sources.
 
 .. image:: https://docs.biel.ai/assets/images/biel-widget-docs-bd28548cf26a37bcb7c496487280bbfe.png
    :alt: Biel.ai AI assistant for Sphinx
 
-Biel.ai's extension adds conversational answers and documentation search to Sphinx sites, including sites using the Read the Docs theme.
+Biel.ai's extension adds the website assistant to Sphinx sites, including sites using the Read the Docs theme. Add the search widget separately to offer documentation search.
 
 **Note:** A Biel.ai plan is required to use this plugin. Try it free for 14 days—no credit card required.
 
@@ -14,13 +14,12 @@ Key features
 ------------
 
 - **Ask AI** button that opens the documentation assistant for answers with source links.
-- Documentation search with an Ask AI handoff to the assistant.
+- **Documentation search**: add a search widget for matching pages from indexed
+  docs, with an **Ask AI** action that sends the current query to the assistant.
 - Integration with Sphinx.  
 - Customizable to match your site's branding and user needs.
 - **Connect** menu to connect indexed docs to Claude Code, Codex, and other MCP
   clients by copying an endpoint or setup command, or opening a supported client.
-  Requires MCP enabled on an `eligible plan <https://biel.ai/pricing>`_.
-  `MCP setup guide <https://docs.biel.ai/integrations/mcp-server>`_.
 
 Get started
 -----------
