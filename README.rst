@@ -16,7 +16,11 @@ Key features
 - AI assistant that answers questions from your connected documentation, with source links.
 - Documentation search with an Ask AI handoff to the assistant.
 - Integration with Sphinx.  
-- Customizable to match your site's branding and user needs.  
+- Customizable to match your site's branding and user needs.
+- **Connect** menu to connect indexed docs to Claude Code, Codex, and other MCP
+  clients by copying an endpoint or setup command, or opening a supported client.
+  Requires MCP enabled on an `eligible plan <https://biel.ai/pricing>`_.
+  `MCP setup guide <https://docs.biel.ai/integrations/mcp-server>`_.
 
 Get started
 -----------
@@ -26,18 +30,6 @@ See the `Sphinx AI assistant integration guide <https://docs.biel.ai/installatio
 The extension loads the widget's JavaScript and CSS from the CDN. It uses
 ``latest`` by default; set ``biel_version`` in ``conf.py`` to choose a specific
 release. You do not need to install ``biel-search`` with npm.
-
-MCP server for docs
--------------------
-
-Connect the same indexed documentation to Claude Code, Codex, and other
-MCP-compatible clients with Biel.ai's `hosted MCP server
-<https://biel.ai/mcp-server-for-docs>`_. This extension embeds the website
-assistant. Configure the hosted MCP endpoint separately in your AI client.
-
-Hosted MCP requires a `plan that includes it <https://biel.ai/pricing>`_. See the
-`MCP connection guide <https://docs.biel.ai/integrations/mcp-server>`_ for client
-setup.
 
 Support
 -------
