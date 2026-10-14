@@ -13,7 +13,7 @@ Biel.ai's extension adds conversational answers and documentation search to Sphi
 Key features
 ------------
 
-- AI assistant that answers questions from your connected documentation, with source links.
+- **Ask AI** button that opens the documentation assistant for answers with source links.
 - Documentation search with an Ask AI handoff to the assistant.
 - Integration with Sphinx.  
 - Customizable to match your site's branding and user needs.
