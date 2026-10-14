@@ -1,5 +1,5 @@
 """
-ASK AI chatbot for Sphinx.
+Biel.ai AI assistant for Sphinx documentation.
 
 (c) 2024 - present Biel.ai
 This code is licensed under MIT license (see LICENSE.md for details).
@@ -30,7 +30,7 @@ class BielExtension:
         "button_position": "bottom-right",
         "button_text": "Ask AI",
         "button_style": "dark",
-        "header_title": "Biel.ai chatbot",
+        "header_title": "Biel.ai assistant",
         "version": "latest",
         # Retain the earlier config spellings as aliases of canonical widget props.
         "error_message_4_0_3": None,

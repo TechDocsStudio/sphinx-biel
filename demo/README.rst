@@ -26,10 +26,10 @@ Rebuild after changing environment variables or ``demo/source/conf.py``.
 Things to check
 ---------------
 
-* The floating button appears on both pages and opens the chatbot.
+* The floating button appears on both pages and opens the assistant.
 * Its label displays ``Ask "AI" <demo>`` literally, including the angle brackets.
 * The header displays ``Sphinx demo — Ask AI``.
-* The initial message and suggested questions appear in the chatbot.
+* The initial message and suggested questions appear in the assistant.
 * You can enter a question and get a reply with your configured Biel project.
 
 For an installed-package check, build a wheel with ``python -m build --wheel``
