@@ -1,27 +1,27 @@
-AI chatbot extension for Sphinx
-===============================
+AI assistant extension for Sphinx
+=================================
 
-Ask AI chatbot plugin for Sphinx sites, powered by `Biel.ai <https://biel.ai>`_.
+Add the `Biel.ai <https://biel.ai>`_ AI assistant to your Sphinx documentation. Help readers get answers grounded in your documentation, with links to the sources.
 
 .. image:: https://docs.biel.ai/assets/images/biel-widget-docs-bd28548cf26a37bcb7c496487280bbfe.png
-   :alt: AI chatbot Sphinx
+   :alt: Biel.ai AI assistant for Sphinx
 
-Add an AI chatbot to your Sphinx documentation using Biel.ai's extension. The integration works with any Sphinx theme, including Read the Docs, and adds both chat and search capabilities.
+Biel.ai's extension adds conversational answers and documentation search to Sphinx sites, including sites using the Read the Docs theme.
 
 **Note:** A Biel.ai plan is required to use this plugin. Try it free for 14 days—no credit card required.
 
 Key features
 ------------
 
-- AI chatbot that provides instant responses to documentation queries.  
-- AI search engine for quick and relevant information retrieval.  
+- AI assistant that answers questions from your connected documentation, with source links.
+- Documentation search with an Ask AI handoff to the assistant.
 - Integration with Sphinx.  
 - Customizable to match your site's branding and user needs.  
 
 Get started
 -----------
 
-See the `Sphinx AI chatbot integration guide <https://docs.biel.ai/installation/sphinx>`_ for installation and setup instructions, including `selecting a widget version <https://docs.biel.ai/installation/sphinx#select-a-widget-version>`_.
+See the `Sphinx AI assistant integration guide <https://docs.biel.ai/installation/sphinx>`_ for installation and setup instructions, including `selecting a widget version <https://docs.biel.ai/installation/sphinx#select-a-widget-version>`_.
 
 The extension loads the widget's JavaScript and CSS from the CDN. It uses
 ``latest`` by default; set ``biel_version`` in ``conf.py`` to choose a specific
@@ -57,4 +57,4 @@ This checks the generated HTML, typed settings and version overrides.
 The browser test also needs Puppeteer and a local widget package for its test
 fixtures. Set ``NODE_PATH`` to that test environment's ``node_modules`` and run
 ``PUPPETEER_EXECUTABLE_PATH=/path/to/chrome node tests/browser-contract.cjs /tmp/biel-sphinx-site``.
-It uses local sample replies to check the button and chatbot settings.
+It uses local sample replies to check the button and assistant settings.

@@ -2,7 +2,7 @@ Sphinx Biel demo
 ================
 
 A small documentation site for trying the Biel extension in a real Sphinx
-project. Open the floating ``Ask "AI" <demo>`` button to try the chatbot.
+project. Open the floating ``Ask "AI" <demo>`` button to try the assistant.
 
 .. toctree::
    :maxdepth: 2
@@ -13,7 +13,7 @@ project. Open the floating ``Ask "AI" <demo>`` button to try the chatbot.
 Getting started
 ---------------
 
-The extension adds the chatbot to every HTML page. This demo configures a
+The extension adds the assistant to every HTML page. This demo configures a
 custom button label, a header, an initial message and suggested questions.
 
 Live replies use the documentation indexed by the Biel project selected with
